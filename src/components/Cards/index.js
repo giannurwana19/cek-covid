@@ -3,11 +3,13 @@ import classNames from 'classnames';
 import React from 'react';
 import CountUp from 'react-countup';
 import styles from './Cards.module.css';
-import loading from '../../loading.gif';
+import loading from '../../images/loading.gif';
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
-    return <img src={loading} alt="loading" width="50" />;
+    return (
+      <img src={loading} className={styles.loading} alt="loading" width="50" />
+    );
   }
 
   return (
